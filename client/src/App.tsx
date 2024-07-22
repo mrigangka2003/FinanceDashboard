@@ -5,6 +5,7 @@ import { themeSettings } from "./theme"
 import { CssBaseline } from "@mui/material"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "@/scenes/navbar/Index"
+import Dashboard from "@/scenes/dashboard/Index"
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
         <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem">
           <Navbar />
           <Routes>
-            <Route path='/' element={<div>Dashboard Page</div>} />
+            <Route path='/' element={<div><Dashboard/></div>} />
             <Route path='/prediction' element={<div>Prediction Page</div>} />
           </Routes>
         </Box>
