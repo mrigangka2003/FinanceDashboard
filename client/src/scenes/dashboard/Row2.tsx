@@ -1,10 +1,15 @@
+import DashboardBox from "@/components/DashboardBox"
 
 type Props = {}
 
 const Row2 = (props: Props) => {
   return (
-    <div>Row2</div>
+    <>
+      <DashboardBox gridArea="d"></DashboardBox>
+      <DashboardBox gridArea="e"></DashboardBox>
+      <DashboardBox gridArea="f"></DashboardBox>
+    </>
   )
 }
 
-export default Row2
+export default Row2;
