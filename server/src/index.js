@@ -6,6 +6,11 @@ import dotenv from "dotenv"
 import helmet from "helmet"
 import morgan from "morgan"
 
+import kpiRoutes from "./routes/kpi.routes.js"  ;
+
+import KPI from "./models/KPI.model.js"
+
+import {kpis} from "./data/data.js"
 //congif 
 
 dotenv.config() ;
@@ -22,10 +27,23 @@ app.use(cors());
 
 const PORT = 8000 || process.env.PORT ;
 
+
+//Routes
+
+app.use('/kpi',kpiRoutes) ;
+
 mongoose.connect(process.env.MONGODB_URI,{
     useNewUrlParser:true ,
     useUnifiedTopology: true,
 }).then(async()=>{
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+    /*Be careful 
+    with this lines of codes 
+    and mongoose *TRAIL*  database
+    won't allow you to drop database.
+    so run that KPI.insertMany only Once*/
+    // await mongoose.connection.db.dropDatabase() ;
+    // KPI.insertMany(kpis)
 
 }).catch((error) => console.log(`${error} did not connect`));
