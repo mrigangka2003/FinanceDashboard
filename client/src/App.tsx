@@ -4,9 +4,9 @@ import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { themeSettings } from "./theme";
-import Navbar from "@/scenes/navbar";
-import Dashboard from "@/scenes/dashboard";
-import Predictions from "@/scenes/predictions";
+import Navbar from "../src/scenes/navbar";
+import Dashboard from "../src/scenes/dashboard";
+import Predictions from "../src/scenes/predictions";
 
 function App() {
   const theme = useMemo(() => createTheme(themeSettings), []);
