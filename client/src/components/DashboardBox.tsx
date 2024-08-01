@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/system";
+import React from 'react';
 
 const DashboardBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.light,

@@ -4,6 +4,7 @@ import {
   GetProductsResponse,
   GetTransactionsResponse,
 } from "./types";
+import React from "react";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
